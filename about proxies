@@ -1,0 +1,16 @@
+from urllib import error
+import requests
+proxies = {
+    'http':'39.137.77.66:8080',
+    'http':'124.42.7.103:80'
+}
+
+url = 'http://icanhazip.com/'
+try:
+    rsp = requests.get(url,proxies=proxies)
+    print(rsp.content)
+
+except error.URLError as e:
+    print(e)
+except Exception as e:
+    print(e)
